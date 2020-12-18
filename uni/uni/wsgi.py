@@ -14,3 +14,11 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'uni.settings')
 
 application = get_wsgi_application()
+
+from bot.telegrambot import TelegramBot
+from django.conf import settings
+from bot.mapping import command_handlers
+
+if settings.RUN_UNIBOT:
+    uni_bot = TelegramBot(settings.BOT_TOKEN, command_handlers)
+    uni_bot.start()

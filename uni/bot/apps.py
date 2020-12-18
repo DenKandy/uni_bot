@@ -1,5 +1,8 @@
 from django.apps import AppConfig
+from django.conf import settings
 
-
-class BotConfig(AppConfig):
+class UniBotConfig(AppConfig):
     name = 'bot'
+
+    def ready(self):
+        pass
