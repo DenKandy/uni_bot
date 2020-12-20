@@ -21,4 +21,4 @@ from bot.mapping import command_handlers
 
 if settings.RUN_UNIBOT:
     uni_bot = TelegramBot(settings.BOT_TOKEN, command_handlers)
-    uni_bot.start()
+    uni_bot.run()
