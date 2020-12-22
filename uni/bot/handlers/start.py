@@ -13,11 +13,26 @@ class StartCommand(IHandler):
         self.update = update
         self.context = context
         self.object = None
+        self.users = None
     
-    def execute(self, func):
-        from bot.models import GeneralUniModel
+    def is_user_registered(self):
+        from bot.models import UserUniModel
+        if not self.users:
+            return False
+        if len(self.users) == 0:
+            return False
+
+        for user in self.users:
+            telegram_id = getattr(user, UserUniModel.telegram_id_str)
+            if telegram_id == self.update.message.from_user.id:
+                return True
+
+    def execute(self):
+        from bot.models import GeneralUniModel, UserUniModel
         if not self.object:
-            self.object = GeneralUniModel.objects.first()
+            self.object = GeneralUniModel.objects.all()[0] if self.is_user_registered() else GeneralUniModel.objects.all()[1]
+        if not self.users:
+            self.users = UserUniModel.objects.all()
 
         if self.object:
             value = getattr(self.object, GeneralUniModel.field_name)

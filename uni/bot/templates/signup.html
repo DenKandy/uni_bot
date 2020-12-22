@@ -1,0 +1,78 @@
+{% extends "index.html" %}
+{% block title %}Форма регистрации в Uni{% endblock %}
+{% block content %}
+{% load static %}
+
+{% if form.errors %}
+<div class="alert alert-danger w-100 position-absolute alert-dismissible fade show" role="alert">
+    <p>{{error_list}}</p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+
+</div>
+{% endif %}
+
+<section class="p-4">
+    <div class="d-flex m-4 p-2 justify-content-center">
+        {% csrf_token %}
+        <div class="form-group d-flex flex-md-column flex-xl-column flex-lg-row flex-column justify-content-between">
+                <div class="d-flex flex-row p-2">
+                    <label class="" style="width: 26em;" for="{{form.user_type.id_for_label}}">Кем вы являетесь академии</label>
+                    <select class="">
+                        <option value="">--Пожайлуста выберите--</option>
+                        <option value="student">Студент</option>
+                        <option value="teacher">Преподователь</option>
+                        <option value="managment">Дирекция</option>
+                        <option value="admin">Админинстратор</option>
+                    </select>
+                </div>
+                <div class="d-flex flex-row p-2">
+                    <label class="" style="width: 26em;" for="{{form.position_manager.id_for_label}}">Кто вы по должность</label>
+                    <input class="form-control" type="text" name="{{form.position_manager.name}}" id="{{form.position_manager.auto_id}}" placeholder="К примеру: Деректор">
+                </div>
+                <div class="d-flex flex-row p-2">
+                    <label class="" style="width: 26em;" for="{{form.curatorship.id_for_label}}">Кураторство</label>
+                    <input class="form-control" type="text" name="{{form.curatorship.name}}" id="{{form.curatorship.auto_id}}" placeholder="К примеру: Кураторство">
+                </div>
+                <div class="d-flex flex-row p-2">
+                    <label class="" style="width: 26em;" for="{{form.chair.id_for_label}}">Какая кафедра</label>
+                    <input class="form-control" type="text" name="{{form.chair.name}}" id="{{form.chair.auto_id}}" placeholder="К примеру: Менеджмент и управление процессами">
+                </div>
+                <div class="d-flex flex-row p-2">
+                    <label class="" style="width: 26em;" for="{{form.course.id_for_label}}">На каком вы курсе</label>
+                    <select class="">
+                        <option value="">--Пожайлуста выберите--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div class="d-flex flex-row p-2">
+                    <label class="" style="width: 26em;" for="{{form.group.id_for_label}}">В какой вы группе</label>
+                    <input class="form-control" type="text" name="{{form.group.name}}" id="{{form.group.auto_id}}" placeholder="К примеру: ТЕ 2.101">
+                </div>
+                <div class="d-flex flex-row p-2">
+                    <label class="" style="width: 26em;" for="{{form.full_name.id_for_label}}">Введите полное имя</label>
+                    <input class="form-control" type="text" name="{{form.full_name.name}}" id="{{form.full_name.auto_id}}" placeholder="К примеру: Иванов Иван Иванович">
+                </div>
+                <div class="" style="display: none;">
+                    <label class="" style="width: 26em;" style="display: none;" for="{{form.telegram_id.id_for_label}}"></label>
+                    <input class="form-control" style="display: none;" type="text" name="{{form.telegram_id.name}}" id="{{form.telegram_id.auto_id}}" placeholder="">
+                </div>
+                <div class="" style="display: none;">
+                    <label class="" style="width: 26em;" style="display: none;" for="{{form.is_active.id_for_label}}"></label>
+                    <input class="form-control"style="display: none;" type="text" name="{{form.is_active.name}}" id="{{form.is_active.auto_id}}" placeholder="">
+                </div>
+                <div class="d-flex flex-row p-2">
+                    <label class="" style="width: 26em;" for="{{form.phone_number.id_for_label}}">Введите номер телефона</label>
+                    <input class="form-control" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="{{form.phone_number.name}}" id="{{form.phone_number.auto_id}}" required="" placeholder="К примеру: 097-345-8866">
+                </div>
+            </div>
+    </div>
+</section>
+
+{% endblock %}

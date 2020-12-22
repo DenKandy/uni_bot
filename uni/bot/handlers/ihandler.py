@@ -14,7 +14,7 @@ class IHandler:
     
     def handle_safe(self, handle):
         try:
-            handle(self)
+            handle()
         except (HandlerException, Exception) as e:
             logging.exception(e)
             self.update.message.reply_text("Unexpected error, please contact @who_are_you_7")
