@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from .models import GeneralUniModel
+from .models import UserUniModel
 
-class GeneralUniAdmin(admin.ModelAdmin):
+class UserUniAdmin(admin.ModelAdmin):
     pass
 
-admin.site.register(GeneralUniModel, GeneralUniAdmin)
+admin.site.register(UserUniModel, UserUniAdmin)

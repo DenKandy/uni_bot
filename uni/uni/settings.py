@@ -28,6 +28,7 @@ RUN_UNIBOT = True
 # RUN_UNIBOT = False
 
 ALLOWED_HOSTS = []
+CURRENT_HOST = 'http://127.0.0.1:8000/'
 
 
 # Application definition

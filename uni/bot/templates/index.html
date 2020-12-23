@@ -14,12 +14,11 @@
   <link href="{% static "/css/bootstrap-reboot.min.css" %}" rel="stylesheet">
   <link href="{% static "/css/main.css" %}" rel="stylesheet">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-
-
 </head>
 
 <body>
-  <header style="height: 2em;">
+  <header class="d-flex m-4 p-2 justify-content-center">
+    <h1>{% block header %}{% endblock %}</h1>
   </header>
   <main class="container-fluid">
      {% block content %}

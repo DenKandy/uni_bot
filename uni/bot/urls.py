@@ -5,7 +5,7 @@ from .views import RegisterUser
 
 urlpatterns = [
     path(
-        RegisterUser.URL, 
+        RegisterUser.URL_PATTERN, 
         RegisterUser.as_view(), 
         name=RegisterUser.NAME),
 ]

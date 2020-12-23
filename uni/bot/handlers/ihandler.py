@@ -11,7 +11,7 @@ class IHandler:
         self.update = update
         self.context = context
         self.object = None
-    
+            
     def handle_safe(self, handle):
         try:
             handle()
