@@ -29,6 +29,7 @@ RUN_UNIBOT = True
 
 ALLOWED_HOSTS = []
 CURRENT_HOST = 'http://127.0.0.1:8000/'
+DEV_SUPPORT = '@who_are_you_7'
 
 
 # Application definition

@@ -17,8 +17,8 @@ application = get_wsgi_application()
 
 from bot.telegrambot import TelegramBot
 from django.conf import settings
-from bot.mapping import command_handlers
+from bot.mapping import command_handlers, message_handlers, conversation_handlers
 
 if settings.RUN_UNIBOT:
-    uni_bot = TelegramBot(settings.BOT_TOKEN, command_handlers)
+    uni_bot = TelegramBot(settings.BOT_TOKEN, command_handlers=command_handlers, message_handlers=message_handlers, conversation_handlers=conversation_handlers)
     uni_bot.run()

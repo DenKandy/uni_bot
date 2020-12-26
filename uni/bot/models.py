@@ -2,9 +2,11 @@ from django.db import models
 
 class UserUniModel(models.Model):
     telegram_id_str = 'telegram_id'
+    user_types_str = 'user_types'
+
     STUDENT = 'student'
     TEACHER = 'teacher'
-    MANAGEMENT = 'managment'
+    MANAGEMENT = 'manager'
     ADMIN = 'admin'
 
     CHOICE_USER_TYPES = (
@@ -12,6 +14,21 @@ class UserUniModel(models.Model):
         (TEACHER, 'Преподователь'),
         (MANAGEMENT, 'Дирекция'),
         (ADMIN, 'Админинстратор'))
+
+    USER_TYPES_KEYS = {
+        STUDENT     : CHOICE_USER_TYPES[0][1],
+        TEACHER     : CHOICE_USER_TYPES[1][1],
+        MANAGEMENT  : CHOICE_USER_TYPES[2][1],
+        ADMIN       : CHOICE_USER_TYPES[3][1],
+    }
+
+    USER_TYPES_VALUES = {
+        CHOICE_USER_TYPES[0][1] : STUDENT,
+        CHOICE_USER_TYPES[1][1] : TEACHER,
+        CHOICE_USER_TYPES[2][1] : MANAGEMENT,
+        CHOICE_USER_TYPES[3][1] : ADMIN,
+    }
+
 
     _0 = 0
     _1 = 1
@@ -43,3 +60,18 @@ class UserUniModel(models.Model):
 
     def __str__(self):
         return self.full_name
+
+    @staticmethod
+    def get_users_by_category(category):
+        from bot.models import UserUniModel
+        db_users = UserUniModel.objects.all()
+        user_ids = []
+        if db_users:
+            for db_user in db_users:
+                user_type = getattr(db_user, UserUniModel.user_types_str)
+                if user_type == category:
+                    telegram_id = getattr(db_user, UserUniModel.telegram_id_str)
+                    user_ids.append(int(telegram_id))
+        
+        return user_ids
+
