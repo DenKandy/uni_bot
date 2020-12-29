@@ -1,6 +1,6 @@
 {% extends "index.html" %}
-{% block title %}Форма регистрации в Uni{% endblock %}
-{% block header %}Форма регистрации в Uni{% endblock %}
+{% block title %}Форма реєстрації в Uni{% endblock %}
+{% block header %}Форма реєстрації в Uni{% endblock %}
 {% block content %}
 {% load static %}
 
@@ -97,37 +97,35 @@
                     }
                 </script>
                 <div class="d-flex flex-row p-2">
-                    <label class="" style="width: 26em;" for="{{form.user_types.id_for_label}}">Кем вы являетесь
-                        академии</label>
+                    <label class="" style="width: 26em;" for="{{form.user_types.id_for_label}}">Ким ви є академії</label>
                     <select class="" onchange="onchange_user(this);" name="{{form.user_types.name}}"
                         id="{{form.user_types.auto_id}}" required="">
-                        <option value="">--Пожайлуста выберите--</option>
+                        <option value="">--Будь ласка, оберіть--</option>
                         <option value="student">Студент</option>
-                        <option value="teacher">Преподователь</option>
-                        <option value="management">Дирекция</option>
-                        <option value="admin">Админинстратор</option>
+                        <option value="teacher">Викладач</option>
+                        <option value="management">Дирекція</option>
+                        <option value="admin">Адміністратор</option>
                     </select>
                 </div>
                 <div class="d-flex flex-row p-2" id='position-manager'>
-                    <label class="" style="width: 26em;" for="{{form.position_manager.id_for_label}}">Кто вы по
-                        должность</label>
+                    <label class="" style="width: 26em;" for="{{form.position_manager.id_for_label}}">Ваша посада</label>
                     <input class="form-control" type="text" name="{{form.position_manager.name}}"
-                        id="{{form.position_manager.auto_id}}" placeholder="К примеру: Деректор">
+                        id="{{form.position_manager.auto_id}}" placeholder="Наприклад: Викладач">
                 </div>
                 <div class="d-flex flex-row p-2" id='curatorship'>
                     <label class="" style="width: 26em;" for="{{form.curatorship.id_for_label}}">Кураторство</label>
                     <input class="form-control" type="text" name="{{form.curatorship.name}}"
-                        id="{{form.curatorship.auto_id}}" placeholder="К примеру: Кураторство">
+                        id="{{form.curatorship.auto_id}}" placeholder="Наприклад: Кураторство">
                 </div>
                 <div class="d-flex flex-row p-2" id='chair'>
-                    <label class="" style="width: 26em;" for="{{form.chair.id_for_label}}">Какая кафедра</label>
+                    <label class="" style="width: 26em;" for="{{form.chair.id_for_label}}">Яка кафедра</label>
                     <input class="form-control" type="text" name="{{form.chair.name}}" id="{{form.chair.auto_id}}"
-                        placeholder="К примеру: Менеджмент и управление процессами">
+                        placeholder="Наприклад: Менеджмент і управління процесами">
                 </div>
                 <div class="d-flex flex-row p-2" id='course'>
-                    <label class="" style="width: 26em;" for="{{form.course.id_for_label}}">На каком вы курсе</label>
+                    <label class="" style="width: 26em;" for="{{form.course.id_for_label}}">На якому ви курсі</label>
                     <select class="" id="{{form.course.auto_id}}">
-                        <option value="">--Пожайлуста выберите--</option>
+                        <option value="">--Будь ласка, оберіть--</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -137,15 +135,14 @@
                     </select>
                 </div>
                 <div class="d-flex flex-row p-2" id='group'>
-                    <label class="" style="width: 26em;" for="{{form.group.id_for_label}}">В какой вы группе</label>
+                    <label class="" style="width: 26em;" for="{{form.group.id_for_label}}">В який ви групі</label>
                     <input class="form-control" type="text" name="{{form.group.name}}" id="{{form.group.auto_id}}"
-                        placeholder="К примеру: ТЕ 2.101">
+                        placeholder="Наприклад: ТЕ 2.101">
                 </div>
                 <div class="d-flex flex-row p-2">
-                    <label class="" style="width: 26em;" for="{{form.full_name.id_for_label}}">Введите полное
-                        имя</label>
+                    <label class="" style="width: 26em;" for="{{form.full_name.id_for_label}}">Введіть повне ім'я</label>
                     <input class="form-control" type="text" name="{{form.full_name.name}}"
-                        id="{{form.full_name.auto_id}}" required="" placeholder="К примеру: Иванов Иван Иванович">
+                        id="{{form.full_name.auto_id}}" required="" placeholder="Наприклад: Іванов Іван Іванович">
                 </div>
                 <div class="" style="display: none;">
                     <label class="" style="width: 26em;" style="display: none;"
@@ -160,14 +157,13 @@
                         id="{{form.is_active.auto_id}}" placeholder="">
                 </div>
                 <div class="d-flex flex-row p-2">
-                    <label class="" style="width: 26em;" for="{{form.phone_number.id_for_label}}">Введите номер
-                        телефона</label>
+                    <label class="" style="width: 26em;" for="{{form.phone_number.id_for_label}}">Введіть номер телефону</label>
                     <input class="form-control" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         name="{{form.phone_number.name}}" id="{{form.phone_number.auto_id}}" required=""
-                        placeholder="К примеру: 097-345-8866">
+                        placeholder="Наприклад: 097-345-8866">
                 </div>
                 <div class="d-flex justify-content-center p-4">
-                    <input class="p-2" style="width: 26em;" type="submit" value="Отправить">
+                    <input class="p-2" style="width: 26em;" type="submit" value="Зареєструватися">
                 </div>
         </form>
     </div>

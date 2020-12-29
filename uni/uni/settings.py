@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'q6mox!yvp5xk1xcf(ddtgz8c7mm+43@)p-+o1d0h1$rrldsi-v'
-BOT_TOKEN  = '1207509512:AAGRbYPCS6y7TYkexrzP4WUFHDOc_nFD068'
+BOT_TOKEN  = '1457969826:AAFV3D8SPpkgAte68eQgF8TStywhltbq9eM'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 RUN_UNIBOT = True

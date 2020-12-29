@@ -11,9 +11,9 @@ class UserUniModel(models.Model):
 
     CHOICE_USER_TYPES = (
         (STUDENT, 'Студент'),
-        (TEACHER, 'Преподователь'),
-        (MANAGEMENT, 'Дирекция'),
-        (ADMIN, 'Админинстратор'))
+        (TEACHER, 'Викладач'),
+        (MANAGEMENT, 'Дирекція'),
+        (ADMIN, 'Адміністратор'))
 
     USER_TYPES_KEYS = {
         STUDENT     : CHOICE_USER_TYPES[0][1],
